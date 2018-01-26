@@ -14,7 +14,7 @@
     },
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
-    "ami_name": "",
+    "ami_name": "gridplus-build-cluster",
     "force_deregister": true
   }],
   "provisioners": [{
@@ -30,7 +30,7 @@
       "sudo apt-get update",
       "sudo apt-get install -y docker-ce",
       "sudo usermod -aG docker ubuntu",
-      "sudo curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose",
+      "sudo curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose",
       "sudo chmod +x /usr/local/bin/docker-compose",
       "sudo apt-get install -y openjdk-8-jdk"
     ]
