@@ -7,7 +7,7 @@ export AWS_SECRET_ACCESS_KEY=[...]
 
 export AWS_DEFAULT_REGION=us-east-1
 
-packer build -machine-readable test-cluster.json | tee test-cluster.log
+packer build -machine-readable build-cluster.json | tee build-cluster.log
 
 export AMI_ID=$(grep 'artifact,0,id' test-cluster.log | cut -d: -f2)
 
