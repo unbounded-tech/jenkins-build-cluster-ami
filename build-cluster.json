@@ -12,7 +12,7 @@
       "owners": ["099720109477"],
       "most_recent": true
     },
-    "instance_type": "t2.micro",
+    "instance_type": "m4.large",
     "ssh_username": "ubuntu",
     "ami_name": "gridplus-build-cluster",
     "force_deregister": true
