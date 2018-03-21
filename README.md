@@ -9,15 +9,6 @@ export AWS_DEFAULT_REGION=us-east-1
 
 packer build -machine-readable build-cluster.json | tee build-cluster.log
 
-export AMI_ID=$(grep 'artifact,0,id' test-cluster.log | cut -d: -f2)
+export AMI_ID=$(grep 'artifact,0,id' build-cluster.log | cut -d: -f2)
 
-# Launch new instance
-
-PUBLIC_IP=[...]
-
-ssh -i secrets/dockerflow.pem ubuntu@$PUBLIC_IP
-
-IP=$(ifconfig eth0 | grep 'inet addr:'  | cut -d: -f2 | awk '{ print $1}')
-
-docker swarm init --advertise-addr $IP
 ```
